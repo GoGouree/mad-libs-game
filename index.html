@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mad Libs Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: coral;
+        }
+        #story {
+            margin-top: 20px;
+            color: darksalmon;
+        }
+        input {
+            margin: 5px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #afa54c; /* Green */
+            border: none;
+            color: rgb(245, 223, 223);
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mad Libs Game</h1>
+    <p>Enter words to see your story:</p>
+    <input id="name" type="text" placeholder="Name">
+    <input id="place" type="text" placeholder="Place">
+    <input id="dayOfWeek" type="text" placeholder="Day of Week">
+    <input id="funnyWord" type="text" placeholder="Funny Word">
+    <input id="colleagueName" type="text" placeholder="Name of Colleague">
+    <input id="number" type="text" placeholder="Number">
+    <input id="favoriteTopic" type="text" placeholder="Favorite Topic">
+    <button onclick="showStory()">Show Story</button>
+    <button onclick="resetStory()">Reset</button>
+    <p id="story"></p>
+
+    <script>
+        function showStory() {
+            var name = document.getElementById('name').value;
+            var place = document.getElementById('place').value;
+            var dayOfWeek = document.getElementById('dayOfWeek').value;
+            var funnyWord = document.getElementById('funnyWord').value;
+            var colleagueName = document.getElementById('colleagueName').value;
+            var number = document.getElementById('number').value;
+            var favoriteTopic = document.getElementById('favoriteTopic').value;
+            var story = name + ' went to ' + place + ' on ' + dayOfWeek + '. She shouted ' + funnyWord + ' to her colleague ' + colleagueName + ' ' + number + ' times about her favorite topic: ' + favoriteTopic + '.';
+            document.getElementById('story').innerHTML = story;
+        }
+
+        function resetStory() {
+            document.getElementById('name').value = '';
+            document.getElementById('place').value = '';
+            document.getElementById('dayOfWeek').value = '';
+            document.getElementById('funnyWord').value = '';
+            document.getElementById('colleagueName').value = '';
+            document.getElementById('number').value = '';
+            document.getElementById('favoriteTopic').value = '';
+            document.getElementById('story').innerHTML = '';
+        }
+    </script>
+</body>
+</html>
